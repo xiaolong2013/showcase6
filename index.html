@@ -18,12 +18,14 @@
             for (let i = 0, l = data.length; i < l; i++) {
                 tmp[`data-${i}`] = data[i]
             }
+
             localStorage['data'] = tmp
 
             const secondEnd = useNow ? performance.now() : +new Date
 
             console.log('存在单个key中', secondEnd - secondBegin)
-
+            
+            //localStorage.clear();
             done && done()
         }
 
@@ -37,7 +39,7 @@
             const firstEnd = useNow ? performance.now() : +new Date
 
             console.log('存在多个key中', firstEnd - firstBegin)
-
+            //localStorage.clear(); 
             done && done()
         }
 
